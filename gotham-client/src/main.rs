@@ -23,7 +23,6 @@ fn main() {
     let yaml = load_yaml!("../cli.yml");
     let matches = App::from_yaml(yaml).get_matches();
 
-    /*
     let mut settings = config::Config::default();
     settings
         // Add in `./Settings.toml`
@@ -35,8 +34,6 @@ fn main() {
         .unwrap();
     let hm = settings.try_into::<HashMap<String, String>>().unwrap();
     let endpoint = hm.get("endpoint").unwrap();
-    */
-    let endpoint = "http://localhost:8000";
 
     let client_shim = ClientShim::new(endpoint.to_string(), None);
 
